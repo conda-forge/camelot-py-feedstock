@@ -1,5 +1,5 @@
 {% set name = "camelot-py" %}
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 
 package:
   name: "{{ name }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/socialcopsdev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 2d1b6e1b76d18e572fc8ce37274f365b1bb247ec5701581e1b62d95047720e1e
+  sha256: 02aebf2b8e86c8f962f5c21f851c164d75ddbe1c9d1d01f2c4987c1d2dcfdd1a
 
 build:
   number: 0
