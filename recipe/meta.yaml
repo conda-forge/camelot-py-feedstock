@@ -1,24 +1,27 @@
 {% set name = "camelot-py" %}
+{% set author = "socialcopsdev" %}
 {% set version = "0.7.2" %}
+{% set sha256 = "2386d25df072759ab6a7a1c075ddf94eb2697f840dfa5f95b0c56c6c9c2a49c0" %}
 
 package:
   name: "{{ name }}"
   version: "{{ version }}"
 
 source:
-  url: https://github.com/socialcopsdev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 2386d25df072759ab6a7a1c075ddf94eb2697f840dfa5f95b0c56c6c9c2a49c0
+  url: https://github.com/{{ author }}/{{name }}/archive/v{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
   number: 0
   entry_points:
     - camelot = camelot.cli:cli
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
     - python
     - setuptools
+    - pip
   run:
     - tk
     - ghostscript  # [not win]
