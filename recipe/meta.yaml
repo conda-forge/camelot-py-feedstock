@@ -1,4 +1,4 @@
-{% set version = "0.7.2" %}
+{% set version = "0.7.3" %}
 
 package:
   name: camelot-py
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/socialcopsdev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 2386d25df072759ab6a7a1c075ddf94eb2697f840dfa5f95b0c56c6c9c2a49c0
+  sha256: 60da7906ec5b48984d95abcbd97beff9c3e80c93b47361205def214d507a240c
 
 build:
   number: 0
