@@ -9,7 +9,7 @@ source:
   sha256: 60da7906ec5b48984d95abcbd97beff9c3e80c93b47361205def214d507a240c
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - camelot = camelot.cli:cli
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
@@ -23,7 +23,7 @@ requirements:
     - tk
     - ghostscript  # [not win]
     - click >=6.7
-    - matplotlib >=2.2.3
+    - matplotlib-base >=2.2.3
     - numpy >=1.13.3
     - opencv >=3.2.0
     - openpyxl >=2.5.8
