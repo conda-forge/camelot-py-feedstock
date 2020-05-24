@@ -9,6 +9,7 @@ source:
   sha256: 54689242d5a2dcb03573868c30cb6884bec384f19a7299b3b503412603f9df89
 
 build:
+  noarch: python
   number: 1
   entry_points:
     - camelot = camelot.cli:cli
