@@ -117,4 +117,3 @@ Feedstock Maintainers
 =====================
 
 * [@vinayak-mehta](https://github.com/vinayak-mehta/)
-
