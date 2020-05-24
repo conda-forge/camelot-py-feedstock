@@ -17,12 +17,12 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3
     - setuptools
     - pip
   run:
     - tk
-    - ghostscript  # [not win]
+    - ghostscript
     - click >=6.7
     - matplotlib-base >=2.2.3
     - numpy >=1.13.3
@@ -32,7 +32,7 @@ requirements:
     - pdfminer.six >=20181108
     - pycryptodome
     - pypdf2 >=1.26.0
-    - python
+    - python >=3
 
 test:
   imports:
