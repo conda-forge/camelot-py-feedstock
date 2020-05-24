@@ -5,7 +5,7 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://github.com/socialcopsdev/camelot/archive/v{{ version }}.tar.gz
+  url: https://github.com/camelot-dev/camelot/archive/v{{ version }}.tar.gz
   sha256: 60da7906ec5b48984d95abcbd97beff9c3e80c93b47361205def214d507a240c
 
 build:
