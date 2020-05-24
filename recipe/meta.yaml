@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/camelot-dev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 60da7906ec5b48984d95abcbd97beff9c3e80c93b47361205def214d507a240c
+  sha256: 54689242d5a2dcb03573868c30cb6884bec384f19a7299b3b503412603f9df89
 
 build:
   number: 1
@@ -16,7 +16,7 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3
     - setuptools
     - pip
   run:
@@ -31,7 +31,7 @@ requirements:
     - pdfminer.six >=20181108
     - pycryptodome
     - pypdf2 >=1.26.0
-    - python
+    - python >=3
 
 test:
   imports:
