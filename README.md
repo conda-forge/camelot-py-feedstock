@@ -5,7 +5,7 @@ Home: http://camelot-py.readthedocs.io/
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: PDF Table Extraction for Humans.
 
@@ -117,3 +117,4 @@ Feedstock Maintainers
 =====================
 
 * [@vinayak-mehta](https://github.com/vinayak-mehta/)
+
