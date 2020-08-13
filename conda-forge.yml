@@ -1,13 +1,9 @@
 channels:
   sources:
-    - conda-forge
-    - defaults
-travis:
-  secure:
-    BINSTAR_TOKEN: Yo0NZFl5HfCFxjEPQS1gYUmxkNh2getDy6iOAhCqguFIu/KmXK3WTFhKgWK50B5S/3wyZ3mU9fvTp5GhZlQPEuFP2NQLCEoVUmQVK6FSlOskVNY0zIV1w0s13siZC/bjp4uNqJMb0w6GninaPuxEsRRXN0Hq5nxEeykVeTo+626r/wIpioBzrWOsmfKw4cDmYc3WkL4Gl3klvLUZAc7whYA52HyufVHJ409IG1mV6DJSNhYsalVDW88865D/1kie3J+13OQFMo3vORVruOYPp/Y7kMdgCczLg0oo8XjX2OrSySRTDfblDyPLMrz8biXF7jtG1yzU8npZ7hsR+Q5VwD6Vb2AKWQy5FqHJuf5u1ylVH3MFC3B417jM86Bz19ekjDh+6N6w4ExnQXdAJ9QtebxGuzO+C+xad/Vf3sIMDUPOBGMaDywfsJ/G+Ax9bH5WCQ3BMxmduczs2NDtT3w6x/mH/iamG4BJ1X49xYB9ywSuWo1PChtHwsIc/7qrm7ilL3eQyI+79HxS5ukMydyYQhPpEHjksfDRCaJazSo/uBE7o7so7Jmwh7VGHBxsFuprw26DMX9EmEinX1heSNP4D6t3siQ1LJiirnN6moS+6zJ6ART2zbSJtSHJnXeyZm/iK98oWLCpicDstm+Mt4jCZwClmteooCbe/YNErQFGFGo=
-appveyor:
-  secure:
-    BINSTAR_TOKEN: tumuXLL8PU75WMnRDemRy02ruEq2RpNxeK3dz0MjFssnosPm2v4EFjfNB4PTotA1
+  - conda-forge
+  - defaults
+min_py_ver: '36'
+max_py_ver: '38'
 provider:
   linux: azure
   osx: azure
