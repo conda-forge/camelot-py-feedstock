@@ -1,19 +1,19 @@
-{% set version = "0.8.0" %}
+{% set version = "0.8.2" %}
 
 package:
   name: camelot-py
-  version: "{{ version }}"
+  version: {{ version }}
 
 source:
   url: https://github.com/camelot-dev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 54689242d5a2dcb03573868c30cb6884bec384f19a7299b3b503412603f9df89
+  sha256: 0f65e57327bdd1ba29a4224ec23ebe1f51befdfc6850f94c0d768f06ba9ffd9c
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - camelot = camelot.cli:cli
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -29,7 +29,7 @@ requirements:
     - opencv >=3.2.0
     - openpyxl >=2.5.8
     - pandas >=0.23.4
-    - pdfminer.six >=20181108
+    - pdfminer.six >=20200726
     - pycryptodome
     - pypdf2 >=1.26.0
     - python >=3
