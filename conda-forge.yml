@@ -1,9 +1,7 @@
 channels:
   sources:
-  - conda-forge
-  - defaults
-min_py_ver: '36'
-max_py_ver: '38'
+    - conda-forge
+    - defaults
 provider:
   linux: azure
   osx: azure
