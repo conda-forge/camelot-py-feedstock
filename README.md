@@ -1,11 +1,11 @@
-About camelot-py
-================
+About camelot-py-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/camelot-py-feedstock/blob/main/LICENSE.txt)
 
 Home: http://camelot-py.readthedocs.io/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/camelot-py-feedstock/blob/main/LICENSE.txt)
 
 Summary: PDF Table Extraction for Humans.
 
