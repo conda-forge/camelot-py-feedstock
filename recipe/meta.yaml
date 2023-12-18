@@ -32,7 +32,7 @@ requirements:
     - pandas >=0.23.4
     - pdfminer.six >=20200726
     - pycryptodome
-    - pypdf2 >=1.26.0
+    - pypdf >=3
     - python >=3
     - tabulate >=0.8.9
     - pdftopng
