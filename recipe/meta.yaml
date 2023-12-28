@@ -10,7 +10,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - camelot = camelot.cli:cli
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -23,6 +23,7 @@ requirements:
   run:
     - tk
     - ghostscript
+    - python-ghostscript
     - chardet >=3.0.4
     - click >=6.7
     - matplotlib-base >=2.2.3
@@ -38,10 +39,13 @@ requirements:
     - pdftopng
 
 test:
+  files:
+   - agstat.pdf
   imports:
     - camelot
   commands:
     - camelot --help
+    - python -c "import camelot; camelot.read_pdf('agstat.pdf')"
 
 about:
   home: http://camelot-py.readthedocs.io/
