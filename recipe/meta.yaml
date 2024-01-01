@@ -1,4 +1,4 @@
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 
 package:
   name: camelot-py
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/camelot-dev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 4262ad5cfcf45d0c99097e24a58125337bf399ff752df1c80325ec87be1f3906
+  sha256: 7a019a53cd331a4e864142f1330980367314ff97452267c45c5d185e7774debf
 
 build:
   noarch: python
@@ -32,8 +32,9 @@ requirements:
     - pandas >=0.23.4
     - pdfminer.six >=20200726
     - pycryptodome
-    - pypdf2 >=1.26.0
+    - pypdf >=3
     - python >=3
+    - python-ghostscript
     - tabulate >=0.8.9
     - pdftopng
 
