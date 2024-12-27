@@ -10,14 +10,14 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - camelot = camelot.cli:cli
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
@@ -33,7 +33,7 @@ requirements:
     - pdfminer.six >=20200726
     - pycryptodome
     - pypdf >=3
-    - python >=3
+    - python >={{ python_min }}
     - python-ghostscript
     - tabulate >=0.8.9
     - pdftopng
@@ -43,6 +43,8 @@ test:
     - camelot
   commands:
     - camelot --help
+  requires:
+    - python {{ python_min }}
 
 about:
   home: http://camelot-py.readthedocs.io/
