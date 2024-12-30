@@ -21,22 +21,19 @@ requirements:
     - setuptools
     - pip
   run:
-    - tk
-    - ghostscript
     - chardet >=3.0.4
     - click >=6.7
-    - matplotlib-base >=2.2.3
     - numpy >=1.13.3
-    - opencv >=3.2.0
     - openpyxl >=2.5.8
-    - pandas >=0.23.4
     - pdfminer.six >=20200726
-    - pycryptodome
     - pypdf >=3
-    - python >=3
-    - python-ghostscript
+    - pandas >=0.23.4
     - tabulate >=0.8.9
-    - pdftopng
+    - matplotlib-base >=2.2.3
+    - opencv >=3.2.0
+    - pypdfium2 >=4
+    - python >=3
+    - tk
 
 test:
   imports:
@@ -53,4 +50,5 @@ about:
 extra:
   recipe-maintainers:
     - vinayak-mehta
+    - bosd
     - izahn
