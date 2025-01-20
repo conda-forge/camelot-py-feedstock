@@ -10,14 +10,14 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - camelot = camelot.cli:cli
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
@@ -32,10 +32,12 @@ requirements:
     - matplotlib-base >=2.2.3
     - opencv >=3.2.0
     - pypdfium2 >=4
-    - python >=3
+    - python >={{ python_min }}
     - tk
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - camelot
   commands:
