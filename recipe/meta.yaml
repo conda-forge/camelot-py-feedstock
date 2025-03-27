@@ -1,46 +1,47 @@
+{% set name = "camelot-py" %}
 {% set version = "1.0.0" %}
-
 package:
-  name: camelot-py
+  name: {{ name|lower }}
   version: {{ version }}
-
 source:
-  url: https://github.com/camelot-dev/camelot/archive/v{{ version }}.tar.gz
-  sha256: 1a9e0b36d0dea28aab6aae4cf21da8f82ab612abfa585efab3b60ab30b243ed6
-
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
+  sha256: 62514bd9effaef39a34c850f4b09705a817be160483b028cc8cde14954721466
 build:
-  noarch: python
-  number: 0
+  skip: true  # [py<39]
   entry_points:
-    - camelot = camelot.cli:cli
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
-
+    - camelot = camelot.__main__:main
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+  noarch: python
 requirements:
   host:
-    - python >=3
+    - python >=3.9
     - setuptools
     - pip
   run:
-    - chardet >=3.0.4
-    - click >=6.7
-    - numpy >=1.13.3
-    - openpyxl >=2.5.8
-    - pdfminer.six >=20200726
-    - pypdf >=3
-    - pandas >=0.23.4
-    - tabulate >=0.8.9
-    - matplotlib-base >=2.2.3
-    - opencv >=3.2.0
+    - python >=3.9
+    - click >=8.0.1
+    - chardet >=5.1.0
+    - numpy >=1.24.4  # [py<312]
+    - numpy >=1.26.1  # [py>=312]
+    - openpyxl >=3.1.0
+    - pdfminer-six >=20240706
+    - pypdf >=3.17,<4.0  # [py<312]
+    - pypdf >=4.0,<6.0  # [py>=312]
+    - pandas >=1.5.3  # [py<310]
+    - pandas >=2.2.2  # [py>=310]
+    - tabulate >=0.9.0
+    - typing_extensions >=4.12.2  # [py<311]
+    - opencv >=4.7.0.68
     - pypdfium2 >=4
-    - python >=3
-    - tk
-
 test:
   imports:
     - camelot
   commands:
+    - pip check
     - camelot --help
-
+  requires:
+    - pip
 about:
   home: http://camelot-py.readthedocs.io/
   license: MIT
