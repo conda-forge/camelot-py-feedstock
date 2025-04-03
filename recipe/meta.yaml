@@ -7,7 +7,7 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
   sha256: 62514bd9effaef39a34c850f4b09705a817be160483b028cc8cde14954721466
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<39 or win]
   entry_points:
     - camelot = camelot.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -52,3 +52,4 @@ extra:
     - vinayak-mehta
     - bosd
     - izahn
+    - AaronOpfer
