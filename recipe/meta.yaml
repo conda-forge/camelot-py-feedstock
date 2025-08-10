@@ -1,17 +1,17 @@
 {% set name = "camelot-py" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.9" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
-  sha256: 62514bd9effaef39a34c850f4b09705a817be160483b028cc8cde14954721466
+  sha256: d43d88766f7c3462803ff11464e7d3d15a9223e845972de2b61ef7c3f62d3200
 build:
   skip: true  # [py<39 or win]
   entry_points:
     - camelot = camelot.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 requirements:
   host:
     - python {{ python }}
