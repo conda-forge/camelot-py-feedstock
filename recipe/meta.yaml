@@ -10,8 +10,8 @@ build:
   skip: true  # [py<39 or win]
   entry_points:
     - camelot = camelot.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
 requirements:
   host:
     - python {{ python }}
@@ -20,11 +20,12 @@ requirements:
   run:
     - python {{ python }}
     - click >=8.0.1
+    - pillow >=10.4.0
     - chardet >=5.1.0
     - numpy >=1.24.4  # [py<312]
     - numpy >=1.26.1  # [py>=312]
     - openpyxl >=3.1.0
-    - pdfminer-six >=20240706
+    - pdfminer-six
     - pypdf >=3.17,<4.0  # [py<312]
     - pypdf >=4.0,<6.0  # [py>=312]
     - pandas >=1.5.3  # [py<310]
@@ -33,11 +34,13 @@ requirements:
     - typing_extensions >=4.12.2  # [py<311]
     - opencv >=4.7.0.68
     - pypdfium2 >=4
+  run_constrained:
+    - pdfminer-six >=20240706
 test:
   imports:
     - camelot
   commands:
-    - pip check
+    #  - pip check # check fails due to conda issues with pdfminer.six
     - camelot --help
   requires:
     - pip
