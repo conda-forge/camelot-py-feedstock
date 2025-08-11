@@ -34,6 +34,8 @@ requirements:
     - typing_extensions >=4.12.2  # [py<311]
     - opencv >=4.7.0.68
     - pypdfium2 >=4
+  run_constrained:
+    - pdfminer-six >=20240706
 test:
   imports:
     - camelot
