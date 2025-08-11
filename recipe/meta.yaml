@@ -1,25 +1,24 @@
 {% set name = "camelot-py" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.9" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
-  sha256: 62514bd9effaef39a34c850f4b09705a817be160483b028cc8cde14954721466
+  sha256: 3c5e2d6b38c2f1f46f345c2a11b66236b2848981e01d1d86e090f488661645e7
 build:
   skip: true  # [py<39 or win]
   entry_points:
     - camelot = camelot.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install . -vv
   number: 1
 requirements:
   host:
     - python {{ python }}
-    - setuptools
-    - pip
   run:
     - python {{ python }}
     - click >=8.0.1
+    - pillow >=10.4.0
     - chardet >=5.1.0
     - numpy >=1.24.4  # [py<312]
     - numpy >=1.26.1  # [py>=312]
@@ -31,7 +30,7 @@ requirements:
     - pandas >=2.2.2  # [py>=310]
     - tabulate >=0.9.0
     - typing_extensions >=4.12.2  # [py<311]
-    - opencv >=4.7.0.68
+    - opencv-python-headless >=4.7.0.68
     - pypdfium2 >=4
 test:
   imports:
