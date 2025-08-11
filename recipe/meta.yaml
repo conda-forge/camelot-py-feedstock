@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
-  sha256: 3c5e2d6b38c2f1f46f345c2a11b66236b2848981e01d1d86e090f488661645e7
+  sha256: d43d88766f7c3462803ff11464e7d3d15a9223e845972de2b61ef7c3f62d3200
 build:
   skip: true  # [py<39 or win]
   entry_points:
