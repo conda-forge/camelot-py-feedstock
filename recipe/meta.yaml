@@ -7,25 +7,25 @@ source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
   sha256: e96891d30707b3e2f1c08cb7ae15eea67abe72485ca92c7025b6308ba37bd3cd
 build:
-  skip: true  # [py<39 or win]
+  noarch: python
   entry_points:
     - camelot = camelot.__main__:main
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 1
 requirements:
   host:
-    - python {{ python }}
+    - python {{ python_min }}
     - setuptools
     - pip
   run:
-    - python {{ python }}
+    - python >={{ python_min }}
+    - __unix
     - click >=8.0.1
     - pillow >=10.4.0
     - numpy >=1.26.1
     - openpyxl >=3.1.0
     - pandas >=2.2.2
     - tabulate >=0.9.0
-    - typing_extensions >=4.12.2  # [py<311]
     - opencv >=4.7.0.68
     - pypdfium2 >=4
     - playa-pdf >=0.8.1
@@ -33,9 +33,10 @@ test:
   imports:
     - camelot
   commands:
-    #  - pip check # check fails due to conda issues with pdfminer.six
+    - pip check
     - camelot --help
   requires:
+    - python {{ python_min }}
     - pip
 about:
   home: http://camelot-py.readthedocs.io/
