@@ -1,17 +1,17 @@
 {% set name = "camelot-py" %}
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
-  sha256: e96891d30707b3e2f1c08cb7ae15eea67abe72485ca92c7025b6308ba37bd3cd
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
+  sha256: e56dfa8f447107a29d54b31493195fa735083b607045cab99f7859596699a90b
 build:
   noarch: python
   entry_points:
     - camelot = camelot.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 requirements:
   host:
     - python {{ python_min }}
