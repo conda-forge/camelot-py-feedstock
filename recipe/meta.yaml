@@ -1,11 +1,11 @@
 {% set name = "camelot-py" %}
-{% set version = "2.1.0" %}
+{% set version = "2.2.0" %}
 package:
   name: {{ name|lower }}
   version: {{ version }}
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/camelot_py-{{ version }}.tar.gz
-  sha256: e56dfa8f447107a29d54b31493195fa735083b607045cab99f7859596699a90b
+  sha256: 840cfe44ab2b5dc6b4360d28de55a2fbd6802ab18d12515cfbfc7596cf5547ff
 build:
   noarch: python
   entry_points:
